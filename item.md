@@ -26,3 +26,30 @@ __proto__其实是非标准用法
 let a = {}
 a.__proto__ = B.prototype
 ```
+
+## 判断数组中是否包含某项
+
+1. Array.prototype.indexOf
+es5语法
+
+```javascript
+arr.indexOf(el) !== -1
+```
+
+2. Array.prototype.includes
+es6语法
+
+```javascript
+arr.includes(el)
+```
+
+3. Array.prototype.find/Array.prototype.findIndex
+
+find/findIndex可以不用精确匹配，而是满足某个条件
+更适用于当数组项是对象时。
+
+```javascript
+[1, 5, 10, 15].find(function(value, index, arr) {
+  return value > 9;
+}) // 10
+```
